@@ -11,18 +11,28 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
-    var titleText:String?
-    var contentText:String?
-    
+//    var titleText:String?
+//    var contentText:String?
+    var article:Article?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = titleText
-        contentLabel.text = contentText
+        titleLabel.text = article?.title
+        contentLabel.text = article?.content
 
         // Do any additional setup after loading the view.
+        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    @IBAction func deleteBtn(_ sender: Any) {
+        context.delete(article!)
+        appDelegate.saveContext()
+        _ = navigationController?.popViewController(animated: true)
     }
     
 

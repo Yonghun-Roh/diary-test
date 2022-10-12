@@ -9,7 +9,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var cellLagel: UILabel!
+    @IBOutlet weak var cellLabel: UILabel!
     
     
     

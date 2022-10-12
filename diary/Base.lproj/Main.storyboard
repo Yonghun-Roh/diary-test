@@ -94,7 +94,7 @@
                                                 <constraint firstAttribute="width" constant="74" id="jPm-rd-FSw"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5s-Oe-Anr">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5s-Oe-Anr" userLabel="Cell Label">
                                             <rect key="frame" x="143" y="37" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -112,7 +112,7 @@
                                 <connections>
                                     <outlet property="cellImage" destination="NPD-nc-UD5" id="csR-qp-sw5"/>
                                     <outlet property="cellLagel" destination="H5s-Oe-Anr" id="yPC-ID-R41"/>
-                                    <segue destination="mwH-9l-OMs" kind="showDetail" identifier="detail" id="8tC-Eu-wPe"/>
+                                    <segue destination="mwH-9l-OMs" kind="show" identifier="detail" id="zTn-es-ycN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -133,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="-607.36607142857144"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--무슨 일이 있었나요?-->
         <scene sceneID="bid-5C-KRh">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="mwH-9l-OMs" customClass="DetailViewController" customModule="diary" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCI-s4-nCe">
-                                <rect key="frame" x="20" y="64" width="374" height="49"/>
+                                <rect key="frame" x="20" y="108" width="374" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="ubs-gL-FT7"/>
                                 </constraints>
@@ -151,7 +151,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-ZL-XzT">
-                                <rect key="frame" x="20" y="165" width="374" height="120"/>
+                                <rect key="frame" x="20" y="209" width="374" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1CK-VY-IFv"/>
                                 </constraints>
@@ -159,19 +159,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgM-Bj-3Ji">
+                                <rect key="frame" x="20" y="794" width="374" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="IuD-Cp-Z6f"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="삭제하기"/>
+                                <connections>
+                                    <action selector="deleteBtn:" destination="mwH-9l-OMs" eventType="touchUpInside" id="Hqi-Qo-Wfo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K8O-mf-ExG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dCI-s4-nCe" firstAttribute="top" secondItem="K8O-mf-ExG" secondAttribute="top" constant="20" id="B8m-V7-eZK"/>
+                            <constraint firstItem="eXa-ZL-XzT" firstAttribute="centerX" secondItem="K8O-mf-ExG" secondAttribute="centerX" id="C9d-ZX-Pjh"/>
+                            <constraint firstItem="K8O-mf-ExG" firstAttribute="bottom" secondItem="zgM-Bj-3Ji" secondAttribute="bottom" constant="22" id="Emz-jv-hw6"/>
                             <constraint firstItem="dCI-s4-nCe" firstAttribute="leading" secondItem="K8O-mf-ExG" secondAttribute="leading" constant="20" id="EwJ-lr-BzT"/>
+                            <constraint firstItem="zgM-Bj-3Ji" firstAttribute="leading" secondItem="eXa-ZL-XzT" secondAttribute="leading" id="MLM-A9-jAe"/>
                             <constraint firstItem="K8O-mf-ExG" firstAttribute="trailing" secondItem="eXa-ZL-XzT" secondAttribute="trailing" constant="20" id="ULS-BA-AXQ"/>
                             <constraint firstItem="eXa-ZL-XzT" firstAttribute="leading" secondItem="dCI-s4-nCe" secondAttribute="leading" id="Uc7-vJ-h9e"/>
                             <constraint firstItem="K8O-mf-ExG" firstAttribute="trailing" secondItem="dCI-s4-nCe" secondAttribute="trailing" constant="20" id="h8u-nW-4iG"/>
+                            <constraint firstItem="zgM-Bj-3Ji" firstAttribute="centerX" secondItem="K8O-mf-ExG" secondAttribute="centerX" id="k7P-hk-aaj"/>
                             <constraint firstItem="eXa-ZL-XzT" firstAttribute="top" secondItem="dCI-s4-nCe" secondAttribute="bottom" constant="52" id="lqa-Lr-kzF"/>
                             <constraint firstItem="eXa-ZL-XzT" firstAttribute="leading" secondItem="K8O-mf-ExG" secondAttribute="leading" constant="20" id="yAN-ct-u1u"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="무슨 일이 있었나요?" id="ERc-54-WlQ"/>
                     <connections>
                         <outlet property="contentLabel" destination="eXa-ZL-XzT" id="z5C-wK-ooT"/>
                         <outlet property="titleLabel" destination="dCI-s4-nCe" id="KUl-6r-Qdu"/>
